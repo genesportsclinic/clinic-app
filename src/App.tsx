@@ -109,7 +109,7 @@ const DEFAULT_ITEM_PRODUCTS = [
   "체험권",
 ];
 
-const ADMIN_CODE = "0425";
+const ADMIN_CODE = "9577";
 
 // ----------------------
 // 메인 컴포넌트
