@@ -1,0 +1,402 @@
+/* 전체 배경 + 기본 폰트 */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+}
+
+/* 앱 전체 레이아웃 */
+.app-root {
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f5f7fb;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 헤더 영역 */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #fff7eb, #ffffff);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-img {
+  height: 70px; /* 🔻 로고 크기 줄임 */
+  width: auto;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #111827;
+}
+
+.header-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* 헤더 오른쪽 - 관리자 박스 */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.mode-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.mode-admin {
+  color: #ea580c;
+}
+
+.mode-view {
+  color: #4b5563;
+}
+
+.admin-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-box input {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.admin-box input:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.2);
+}
+
+.admin-box button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+  font-weight: 600;
+}
+
+/* 탭 네비게이션 */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  padding: 10px 16px 4px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.tab-btn:hover {
+  background: #e5e7eb;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+  font-weight: 600;
+}
+
+/* 메인 컨텐츠 */
+.tab-content {
+  padding: 16px 20px 20px;
+  background: #f5f7fb;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* 카드 공통 스타일 */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px 18px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+}
+
+.card + .card {
+  margin-top: 14px;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  color: #111827;
+}
+
+/* 폼/입력 영역 */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  flex: 1;
+}
+
+.form-field label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.form-field input,
+.form-field select {
+  padding: 7px 9px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background: #f9fafb;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.2);
+  background: #ffffff;
+}
+
+/* 4열 그리드 – 데스크탑에서 입력 칸 깔끔하게 배치 */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+.value-box {
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: #f9fafb;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+  align-self: flex-end;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* 필터 박스 */
+.filter-box {
+  margin-top: 16px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.filter-mode {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.filter-row label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* 표 스타일 */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.data-table thead {
+  background: #f3f4f6;
+}
+
+.data-table th,
+.data-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.data-table th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.table-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 10px;
+}
+
+/* 손익 색상 */
+.profit-positive {
+  color: #059669;
+  font-weight: 600;
+}
+
+.profit-negative {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+/* 요약 섹션 */
+.summary-section + .summary-section {
+  margin-top: 16px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.export-box {
+  margin-top: 18px;
+  border-radius: 12px;
+  padding: 12px 14px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.hint-text {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* 반응형 – 화면이 좁아지면 한 열로 정리 */
+@media (max-width: 1024px) {
+  .app-root {
+    padding: 10px;
+  }
+
+  .app-shell {
+    border-radius: 0;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    align-items: flex-start;
+  }
+
+  .tab-nav {
+    flex-wrap: wrap;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
