@@ -750,8 +750,8 @@ const App: React.FC = () => {
       examTotalAmount += total;
     });
 
-    ws["D18"] = { ...(ws["D18"] || {}), v: examTotalCount };
-    ws["E18"] = { ...(ws["E18"] || {}), v: examTotalAmount };
+    ws["D19"] = { ...(ws["D19"] || {}), v: examTotalCount };
+    ws["E19"] = { ...(ws["E19"] || {}), v: examTotalAmount };
 
     const productRowMap: Record<string, number> = {
       젠톡유전자키트: 22,
@@ -776,7 +776,7 @@ const App: React.FC = () => {
       prodTotalAmount += total;
     });
 
-    ws["E26"] = { ...(ws["E26"] || {}), v: prodTotalAmount };
+    ws["E27"] = { ...(ws["E27"] || {}), v: prodTotalAmount };
 
     const fileName = `일일통계_${dateStr}.xlsx`;
     const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
