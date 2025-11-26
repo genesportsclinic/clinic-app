@@ -405,7 +405,6 @@ const App: React.FC = () => {
   function getLegacyPrice(
     itemType: ItemType,
     productName: string,
-    _staffRole: "팀장" | "일반" | null
   ): number {
     // 기존 하드코딩 가격이 있었다면 여기에 입력 (fallback 용도)
     // 지금은 0을 반환해서 "가격 미설정" 상태만 표시
@@ -416,11 +415,11 @@ const App: React.FC = () => {
   function getUnitPrice(
     itemType: ItemType,
     productName: string,
-    _staffRole: "팀장" | "일반" | null
+    staffRole: "팀장" | "일반" | null
   ): number {
     const fromDb = getPriceFromProducts(itemType, productName, staffRole);
     if (fromDb != null) return fromDb;
-    return getLegacyPrice(itemType, productName, staffRole);
+    return getLegacyPrice(itemType, productName);
   }
 
   function applyDiscount(amount: number, discount: DiscountKey): number {
