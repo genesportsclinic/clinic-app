@@ -107,7 +107,7 @@ const ITEM_TYPES: ItemType[] = ["운동 검사", "PT", "상품"];
 const PAYMENT_METHODS: PaymentMethod[] = ["카드", "현금", "계좌 이체"];
 
 const LOCAL_STORAGE_KEY = "clinic-app-data-v2";
-const ADMIN_CODE = "0425";
+const ADMIN_CODE = "9577";
 
 /* ---------- 유틸 ---------- */
 
