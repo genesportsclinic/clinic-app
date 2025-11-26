@@ -172,9 +172,6 @@ const App: React.FC = () => {
   const [expenseFrom, setExpenseFrom] = useState(formatDate(dayjs()));
   const [expenseTo, setExpenseTo] = useState(formatDate(dayjs()));
 
-  const [selectedExpenseFile, setSelectedExpenseFile] =
-    useState<File | null>(null);
-
   const [summaryMonth, setSummaryMonth] = useState<string>(
     dayjs().format("YYYY-MM")
   );
@@ -408,7 +405,7 @@ const App: React.FC = () => {
   function getLegacyPrice(
     itemType: ItemType,
     productName: string,
-    staffRole: "팀장" | "일반" | null
+    _staffRole: "팀장" | "일반" | null
   ): number {
     // 기존 하드코딩 가격이 있었다면 여기에 입력 (fallback 용도)
     // 지금은 0을 반환해서 "가격 미설정" 상태만 표시
@@ -419,7 +416,7 @@ const App: React.FC = () => {
   function getUnitPrice(
     itemType: ItemType,
     productName: string,
-    staffRole: "팀장" | "일반" | null
+    _staffRole: "팀장" | "일반" | null
   ): number {
     const fromDb = getPriceFromProducts(itemType, productName, staffRole);
     if (fromDb != null) return fromDb;
@@ -521,7 +518,6 @@ const App: React.FC = () => {
   async function handleExpenseFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (!e.target.files || e.target.files.length === 0) return;
     const file = e.target.files[0];
-    setSelectedExpenseFile(file);
 
     if (!isAdminMode) {
       alert("관리자 모드에서만 업로드 가능합니다.");
