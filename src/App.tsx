@@ -164,12 +164,15 @@ type FilterMode = "single" | "range";
 
 function inRange(date: string, from: string, to: string) {
   const d = dayjs(date);
-  return (
-    d.isValid() &&
-    d.isSameOrAfter(dayjs(from)) &&
-    d.isSameOrBefore(dayjs(to))
-  );
+  const fromD = dayjs(from);
+  const toD = dayjs(to);
+
+  if (!d.isValid() || !fromD.isValid() || !toD.isValid()) return false;
+
+  // fromD보다 같거나 뒤, toD보다 같거나 앞
+  return !d.isBefore(fromD, "day") && !d.isAfter(toD, "day");
 }
+
 
 /* ---------- 컴포넌트 ---------- */
 
