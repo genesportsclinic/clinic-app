@@ -1250,7 +1250,8 @@ const App: React.FC = () => {
 
       // 월 누적: 상품 (I52~I55, J52~J55)
       const productMonthlyRowMap: Record<string, number> = {
-        젠톡유전자키트: 52,
+        젠톡: 52,
+        제닉스바이오: 53,
         프로틴음료: 54,
         게토레이: 55,
       };
@@ -1261,6 +1262,8 @@ const App: React.FC = () => {
         if (count !== 0) {
           worksheet.getCell(`I${row}`).value = count;
         }
+        if (amount !== 0) {
+          worksheet.getCell(`K${row}`).value = amount;
       });
 
       // ----------------------
