@@ -1767,7 +1767,7 @@ const App: React.FC = () => {
                     >
                       <option value="카드">카드</option>
                       <option value="현금">현금</option>
-                      <option value="계좌 이체">계좌 이체</option>
+                      <option value="계좌">계좌</option>
                     </select>
                   </div>
                   <button
@@ -1969,7 +1969,7 @@ const App: React.FC = () => {
                               >
                                 <option value="카드">카드</option>
                                 <option value="현금">현금</option>
-                                <option value="계좌 이체">계좌 이체</option>
+                                <option value="계좌">계좌</option>
                               </select>
                             </td>
                             <td>
