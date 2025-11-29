@@ -1262,9 +1262,6 @@ const App: React.FC = () => {
         if (count !== 0) {
           worksheet.getCell(`I${row}`).value = count;
         }
-        if (amount !== 0) {
-          worksheet.getCell(`J${row}`).value = amount;
-        }
       });
 
       // ----------------------
