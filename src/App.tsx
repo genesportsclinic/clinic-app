@@ -14,7 +14,7 @@ type ItemType = "운동 검사" | "PT" | "상품";
 
 type DiscountKey = "할인 없음" | "10%" | "20%" | "30%";
 
-type PaymentMethod = "카드" | "현금" | "계좌 이체";
+type PaymentMethod = "카드" | "현금" | "계좌";
 
 interface Staff {
   id: string;
