@@ -104,10 +104,8 @@ const DEFAULT_EXAM_PRODUCTS = [
 ];
 
 const DEFAULT_ITEM_PRODUCTS = [
-  "젠톡유전자키트",
   "프로틴음료",
-  "게토레이",
-  "체험권",
+  "게토레이"
 ];
 
 // ★ 요청사항 3: 관리자 번호 9577로 변경
@@ -1126,7 +1124,8 @@ const App: React.FC = () => {
       const examDailyAmount: Record<string, number> = {};
 
       const productRowMap: Record<string, number> = {
-        젠톡유전자키트: 24,
+        젠톡: 23,
+        제닉스바이오: 24,
         프로틴음료: 25,
         게토레이: 26,
       };
